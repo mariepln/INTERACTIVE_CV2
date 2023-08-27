@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le lien qui permet d'avoir Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Monserrat -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Playfair+Display:wght@500&family=Raleway:wght@500&display=swap');
+    </style>
+    <!-- Font Abril Fatface -->
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">     
+    <title>Document</title>
+
+
+</head>
+<body class="text-gray-700">
+    <!-- La div qui contient la photo de fond et qui permet égalemetn de centrer les elements -->
+    <div class="background">
+        <h1 class="mx-16 flex space-x-3 justify-center mb-20 text-2xl flex-wrap lg:text-4xl xl:text-5xl" >
+        <!-- La première phrase est divisée en span pour pouvoir les animer un par un -->
+        <span>Bienvenue </span> <span>sur </span> <span>mon </span> <span>premier </span> <span>site </span> <span>!</span> 
+        </h1>
+        <h2 class="mr-10 w-30 md:w-50 lg:w-70 sm:text-lg md:text-xl lg:text-2xl text-center">
+            Cliquez sur le lien pour découvrir mon CV.
+        </h2>
+        
+        <!-- Les boutons responsifs-->
+        <div class="buttons text-center space-x-2 space-x-8">
+            <a href="CV Marie/CVMarie.html"><div class="btn sm:w-15 md:w-30 lg:w-40 flex justify-center items-center">Marie</div></a>
+        </div>
+    </div>    
+    
+    <!-- Librairie JavaScript nécessaire pour animer le titre -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>  
+    
+    <!-- Script en JavaScript pour animer le titre -->
+    <script>
+        const titreSpans = document.querySelectorAll('h1 span');
+        const TL = gsap.timeline({paused: true});
+        window.addEventListener("load", (event) => {
+            TL.staggerFrom(titreSpans, 1, {top: -50, opacity: 0, ease: "power2.out"}, 0.3);});
+        
+        TL.play();
+    </script>
+     
+</body>
+</html>
